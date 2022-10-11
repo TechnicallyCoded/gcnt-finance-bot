@@ -316,8 +316,8 @@ class CustomPlugins {
         const ticketId = await this.executeSQL("SELECT id FROM plugin_request_ticket WHERE discord_channel_id = ?", [interaction.channelId]);
 
         if (userRes[0].role !== "admin" || approve == null) {
-            const embed = this.getEmbed("order closed!", `<@${interaction.user.id}> has closed the order.`, "#f58a42");
-            const sent = await interaction.reply({content: "order closed!", fetchReply: true});
+            const embed = this.getEmbed("Order closed!", `<@${interaction.user.id}> has closed the order.`, "#f58a42");
+            const sent = await interaction.reply({content: "Order closed!", fetchReply: true});
             setTimeout(() => sent.delete(), 5000);
 
             this.revokeAccess(interaction.channel);
